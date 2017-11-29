@@ -1,5 +1,6 @@
 package com.flash.freelife.app.presenter.main
 
+import com.flash.freelife.app.module.main.MainModule
 import com.flash.freelife.app.presenter.BasePresenter
 import com.flash.freelife.app.view.main.IMainView
 
@@ -8,9 +9,10 @@ import com.flash.freelife.app.view.main.IMainView
  */
 open class MainPresenter(mainView: IMainView) : BasePresenter(), IMainPresenter {
     val mainView: IMainView = mainView
+    val mainModule:MainModule = MainModule()
 
     override fun detachView() {
-
+        mainModule.cancelNetWok()
     }
 
     override fun loadData(): String {
