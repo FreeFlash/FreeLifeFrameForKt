@@ -7,4 +7,6 @@ import android.content.Context
  */
 open interface IBaseView {
     fun getContext(): Context
+    fun showLoading()
+    fun hideLoading()
 }

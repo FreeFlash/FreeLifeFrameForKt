@@ -11,10 +11,6 @@ open class MainPresenter(mainView: IMainView) : BasePresenter(), IMainPresenter 
     val mainView: IMainView = mainView
     val mainModule:MainModule = MainModule()
 
-    override fun detachView() {
-        mainModule.cancelNetWok()
-    }
-
     override fun loadData(): String {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

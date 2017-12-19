@@ -26,4 +26,8 @@ class MainActivity : BaseMVPActivity<MainPresenter>(), IMainView {
         return MainPresenter(this)
     }
 
+    fun test(){
+        getPresenter().loadData()
+    }
+
 }

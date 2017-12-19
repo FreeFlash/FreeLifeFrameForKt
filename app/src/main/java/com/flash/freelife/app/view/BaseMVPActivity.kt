@@ -28,4 +28,12 @@ open abstract class BaseMVPActivity<out P : BasePresenter> : BaseActivity(), IBa
     override fun getContext(): Context {
         return this.applicationContext
     }
+
+    override fun showLoading() {
+        showLoadingView()
+    }
+
+    override fun hideLoading() {
+        hideLoadingView()
+    }
 }

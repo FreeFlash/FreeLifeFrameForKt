@@ -15,4 +15,10 @@ open abstract class BaseActivity : AppCompatActivity() {
     abstract fun setLayoutId():Int
     abstract fun initView()
     abstract fun initData()
+    fun showLoadingView(){
+
+    }
+    fun hideLoadingView(){
+
+    }
 }
