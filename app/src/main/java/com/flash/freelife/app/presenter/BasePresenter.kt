@@ -16,7 +16,6 @@ open abstract class BasePresenter {
         this.baseView = baseView
     }
 
-
     fun detachView() {
         modules.forEach { module ->
             module.cancelNetWok()

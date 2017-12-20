@@ -7,6 +7,7 @@ import com.flash.freelife.app.network.ResultCode
  */
 class Result<Data>(var data: Data) {
     lateinit var code:ResultCode
+    lateinit var errorCode:String
     lateinit var details:String
     lateinit var message:String
 }

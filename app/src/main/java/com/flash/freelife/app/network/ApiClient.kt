@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit
  * Created by tianxiaolei on 2017/12/1.
  */
 object ApiClient {
-    val BASE_URL = "http://localhost:8080/api/v1"
+    val BASE_URL = "http://localhost:8080/api/v1/"
     val TIME_OUT: Long = 10
     val retrofit = initRetrofit()
 

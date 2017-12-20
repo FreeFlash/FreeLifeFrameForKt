@@ -12,10 +12,11 @@ import kotlinx.android.synthetic.main.activity_login.*
  */
 class LoginActivity : BaseMVPActivity<LoginPresenter>(), ILoginView, View.OnClickListener {
     override fun loginFail(message: String) {
-
+        showHint(message)
     }
 
     override fun loginSuccess() {
+        showHint("login success")
     }
 
     override fun onClick(v: View?) {
@@ -25,12 +26,17 @@ class LoginActivity : BaseMVPActivity<LoginPresenter>(), ILoginView, View.OnClic
     }
 
     private fun checkLoginParams() {
-        if (TextUtils.isEmpty(textInputEditText_account.text.toString())) {
-
+        val account = textInputEditText_account.text.toString()
+        if (TextUtils.isEmpty(account)) {
+            showHint("account not allow null!")
+            return
         }
-        if(TextUtils.isEmpty(textInputEditText_password.text.toString())){
-
+        val password = textInputEditText_password.text.toString()
+        if (TextUtils.isEmpty(password)) {
+            showHint("password not allow null!")
+            return
         }
+        getPresenter().login(account, password)
     }
 
     override fun setLayoutId(): Int {
@@ -42,10 +48,10 @@ class LoginActivity : BaseMVPActivity<LoginPresenter>(), ILoginView, View.OnClic
     }
 
     override fun initData() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//        todo
     }
 
     override fun setPresenter(): LoginPresenter {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return LoginPresenter()
     }
 }

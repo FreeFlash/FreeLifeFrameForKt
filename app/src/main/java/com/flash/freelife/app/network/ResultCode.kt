@@ -27,5 +27,9 @@ enum class ResultCode {
     /**
      * Token失效
      */
-    TOKEN_INVALID
+    TOKEN_INVALID,
+    /**
+     * 其他错误，包括本地
+     */
+    OTHER_ERROR
 }

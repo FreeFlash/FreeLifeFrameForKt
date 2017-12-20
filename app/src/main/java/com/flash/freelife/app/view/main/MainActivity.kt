@@ -23,7 +23,7 @@ class MainActivity : BaseMVPActivity<MainPresenter>(), IMainView {
     }
 
     override fun setPresenter(): MainPresenter {
-        return MainPresenter(this)
+        return MainPresenter()
     }
 
     fun test(){

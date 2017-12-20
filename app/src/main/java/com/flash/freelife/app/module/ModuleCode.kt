@@ -5,6 +5,5 @@ package com.flash.freelife.app.module
  */
 enum class ModuleCode {
     SUCCESS,
-    SERVER_ERROR,
-    NO_NETWORK,
+    FAILED,
 }
