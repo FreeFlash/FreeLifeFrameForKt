@@ -2,7 +2,7 @@ package com.flash.freelife.app.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.Toast
+import org.jetbrains.anko.toast
 
 open abstract class BaseActivity : AppCompatActivity() {
 
@@ -25,6 +25,6 @@ open abstract class BaseActivity : AppCompatActivity() {
     }
 
     fun showHint(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        toast(message)
     }
 }
