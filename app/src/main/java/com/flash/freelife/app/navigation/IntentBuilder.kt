@@ -7,15 +7,15 @@ import android.content.Intent
 /**
  * Created by tianxiaolei on 2017/12/20.
  */
-class IntentBulider {
+class IntentBuilder {
     var intent: Intent? = null
-    fun createIntent(context: Context, clazz: Class<out Activity>): IntentBulider {
+    fun createIntent(context: Context, clazz: Class<out Activity>): IntentBuilder {
         intent = Intent(context, clazz)
         intent!!.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         return this
     }
 
-    fun createIntent(context: Activity, clazz: Class<out Activity>): IntentBulider {
+    fun createIntent(context: Activity, clazz: Class<out Activity>): IntentBuilder {
         intent = Intent(context, clazz)
         return this
     }
@@ -35,6 +35,4 @@ class IntentBulider {
     fun build(): Intent? {
         return intent
     }
-
-
 }

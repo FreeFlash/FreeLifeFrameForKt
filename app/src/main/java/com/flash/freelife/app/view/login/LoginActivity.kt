@@ -5,7 +5,7 @@ import android.content.Context
 import android.text.TextUtils
 import android.view.View
 import com.flash.freelife.R
-import com.flash.freelife.app.navigation.IntentBulider
+import com.flash.freelife.app.navigation.IntentBuilder
 import com.flash.freelife.app.presenter.login.LoginPresenter
 import com.flash.freelife.app.view.BaseMVPActivity
 import kotlinx.android.synthetic.main.activity_login.*
@@ -15,13 +15,15 @@ import kotlinx.android.synthetic.main.activity_login.*
  */
 class LoginActivity : BaseMVPActivity<LoginPresenter>(), ILoginView, View.OnClickListener {
     companion object {
-        fun start(context: Activity){
-            context.startActivity(IntentBulider().createIntent(context,LoginActivity::class.java).build())
+        fun start(context: Activity) {
+            context.startActivity(IntentBuilder().createIntent(context, LoginActivity::class.java).build())
         }
-        fun start(context: Context){
-            context.startActivity(IntentBulider().createIntent(context,LoginActivity::class.java).build())
+
+        fun start(context: Context) {
+            context.startActivity(IntentBuilder().createIntent(context, LoginActivity::class.java).build())
         }
     }
+
     override fun loginFail(message: String) {
         showHint(message)
     }
