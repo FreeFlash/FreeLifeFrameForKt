@@ -14,17 +14,16 @@ import java.util.concurrent.TimeUnit
  * Created by tianxiaolei on 2017/12/1.
  */
 object ApiClient {
-    val BASE_URL = "http://localhost:8080/api/v1/"
-    val TIME_OUT: Long = 10
-    val retrofit = initRetrofit()
+    private val BASE_URL = "http://localhost:8080/api/v1/"
+    private val TIME_OUT: Long = 10
+    private val retrofit = initRetrofit()
 
     private fun initRetrofit(): Retrofit {
-        val retrofit = Retrofit.Builder()
+        return Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(initOkClient())
                 .addConverterFactory(GsonConverterFactory.create(Gson()))
                 .build()
-        return retrofit;
     }
 
     val freeService = initService()
@@ -40,7 +39,7 @@ object ApiClient {
 
     private fun createLoggingInterceptor(): Interceptor {
         val loggingInterceptor = HttpLoggingInterceptor()
-        loggingInterceptor.setLevel(if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE)
+        loggingInterceptor.level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
         return loggingInterceptor
     }
 

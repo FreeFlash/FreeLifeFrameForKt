@@ -29,7 +29,7 @@ class LoginPresenter : BasePresenter(), ILoginPresenter {
         })
     }
 
-    val loginModule = LoginModule()
+    private val loginModule = LoginModule()
 
     init {
         addModule(loginModule)

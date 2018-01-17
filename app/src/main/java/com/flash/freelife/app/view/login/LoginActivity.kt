@@ -1,8 +1,11 @@
 package com.flash.freelife.app.view.login
 
+import android.app.Activity
+import android.content.Context
 import android.text.TextUtils
 import android.view.View
 import com.flash.freelife.R
+import com.flash.freelife.app.navigation.IntentBulider
 import com.flash.freelife.app.presenter.login.LoginPresenter
 import com.flash.freelife.app.view.BaseMVPActivity
 import kotlinx.android.synthetic.main.activity_login.*
@@ -11,6 +14,14 @@ import kotlinx.android.synthetic.main.activity_login.*
  * Created by tianxiaolei on 2017/12/18.
  */
 class LoginActivity : BaseMVPActivity<LoginPresenter>(), ILoginView, View.OnClickListener {
+    companion object {
+        fun start(context: Activity){
+            context.startActivity(IntentBulider().createIntent(context,LoginActivity::class.java).build())
+        }
+        fun start(context: Context){
+            context.startActivity(IntentBulider().createIntent(context,LoginActivity::class.java).build())
+        }
+    }
     override fun loginFail(message: String) {
         showHint(message)
     }
